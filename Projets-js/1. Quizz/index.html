@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1> Quizz Spécial Piano !</h1>
+
+    <div class="container-global">
+
+        <form class="form-quizz">
+
+            <div class="question-block">
+                <h4>Combien le clavier d’un piano standard a-t-il de touches ? </h4>
+                
+                <div>
+                    <input type="radio" id="number1" name="q1" value="a"checked>
+                    <label for="number1">54</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="number2" name="q1" value="b">
+                    <label for="number2">108</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="number3" name="q1" value="c">
+                    <label for="number3">88</label>
+                </div>
+            </div>
+    
+            <div class="question-block">
+                <h4>Combien de pièces un piano à queue comporte-t-il ?</h4>
+                <div>
+                    <input type="radio" id="pieces1" name="q2" value="a" checked>
+                    <label for="pieces1">12 000</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="pieces2" name="q2" value="b">
+                    <label for="pieces2">5 000</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="pieces3" name="q2" value="c">
+                    <label for="pieces3">9 000</label>
+                </div>
+            </div>
+    
+            <div class="question-block">
+                <h4>A quoi sert la pédale de gauche ?</h4>
+                <div>
+                    <input type="radio" id="pedale1" name="q3" value="a" checked>
+                    <label for="pedale1">prolonger le son</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="pedale2" name="q3" value="b">
+                    <label for="pedale2">affaiblir le son</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="pedale3" name="q3" value="c">
+                    <label for="pedale3">débrayer le son</label>
+                </div>
+            </div>
+    
+    
+            <div class="question-block">
+                <h4>Le piano appartient à la famille des instruments </h4>
+    
+                <div>
+                    <input type="radio" id="family1" name="q4" value="a" checked>
+                    <label for="family2">à cordes frappées</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="family2" name="q4" value="b">
+                    <label for="family2">à cordes frottées</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="family3" name="q4" value="c">
+                    <label for="family3">à cordes pincées</label>
+                </div>
+            </div>
+    
+    
+            <div class="question-block">
+                <h4>Quel compositeur majeur a été le premier à utiliser les possibilités expressives du piano ?</h4>
+                <div>
+                    <input type="radio" id="bach" name="q5" value="a"
+                        checked>
+                    <label for="bach">Jean-Sébastien Bach</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="chopin" name="q5" value="b">
+                    <label for="chopin">Frédéric Chopin</label>
+                </div>
+                
+                <div>
+                    <input type="radio" id="beethoven" name="q5" value="c">
+                    <label for="beethoven"> Ludwig van Beethoven</label>
+                </div>
+            </div>
+    
+            <button type="submit">Validez vos choix !</button>
+
+        </form>
+
+<div class="resultats">
+    <h2>Cliquez sur valider pour voir les resultats</h2>
+    <p class="aide"></p>
+    <p class="note"></p>
+</div>
+
+    </div>
+
+    <!-- <button class="change" type="button">changer la couleur</button> -->
+
+    <script src="app.js"></script>
+</body>
+
+</html>
