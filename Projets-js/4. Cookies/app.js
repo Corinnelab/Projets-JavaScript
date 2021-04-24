@@ -12,7 +12,6 @@ let day = ('0' + nextWeek).slice(9,11);
 let month = ('0' + (nextWeek.getMonth() + 1)).slice(-2);
 let year = today.getFullYear();
 document.querySelector('input[type=date]').value = `${year}-${month}-${day}`;
-
 // console.log(month);
 
 btns.forEach(btn => {
@@ -21,13 +20,11 @@ btns.forEach(btn => {
 
 function btnAction(e){
     let nvObj = {};
-
     inputs.forEach(input => {
         let attrName = input.getAttribute('name');
         let attrValeur = attrName !== "cookieExpire" ? input.value : input.valueAsDate;
         nvObj[attrName] = attrValeur;
     })
-
     // console.log(nvObj);
     let description = e.target.getAttribute('data-cookie');
 
@@ -39,11 +36,9 @@ function btnAction(e){
 }
 
 function creerCookie(name, value, exp) {
-
     infoTxt.innerText = "";
     // Faire disparaitre la liste affichée pour l'enlever du DOM afin de créer de nouveau cookie
     affichage.innerText = "";
-
     // Si le cookie à un même nom
     let cookies = document.cookie.split(';');
     cookies.forEach(cookie => {
@@ -69,7 +64,6 @@ function creerCookie(name, value, exp) {
 }
 
 infoTxt.innerText = "";
-
     document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)};expires=${exp.toUTCString()}`;
     let info = document.createElement('li');
     info.innerText = `Cookie ${name} créé.`;
@@ -81,35 +75,32 @@ infoTxt.innerText = "";
 
 // Pour afficher la liste des cookies
 function listeCookies() {
-
     let cookies = document.cookie.split(';');
     if(cookies.join() === "") {
         infoTxt.innerText = 'Pas de cookies à afficher';
         return
     }
-
     cookies.forEach(cookie => {
         cookie = cookie.trim();
         let formatCookie = cookie.split('=');
 
         // console.log(formatCookie);
         let item = document.createElement('li');
-//    Pour l'afficher
+
+// Pour l'afficher
 infoTxt.innerText = 'Cliquez sur un cookie dans la liste pour le supprimer.'
 item.innerText = `Nom : ${decodeURIComponent(formatCookie[0])}, Valeur : ${decodeURIComponent(formatCookie[1])}`;
 affichage.appendChild(item);
 
-   // Suppression cookie
-   item.addEventListener('click', () => {
-  
-                document.cookie = `${formatCookie[0]}=; expires=${new Date(0)}`
+// Suppression cookie
+item.addEventListener('click', () => {
+    document.cookie = `${formatCookie[0]}=; expires=${new Date(0)}`
                 
-                item.innerText = `Cookie ${formatCookie[0]} supprimé`;
-                setTimeout(() => {
-                    item.remove();
-                }, 1000);
-    
-            })
-
+    item.innerText = `Cookie ${formatCookie[0]} supprimé`;
+    setTimeout(() => {
+        item.remove();
+    }, 1000);
+        })
     })
 }
+
